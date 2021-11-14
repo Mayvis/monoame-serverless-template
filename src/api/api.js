@@ -7,7 +7,7 @@ const swaggerUI = require("swagger-ui-express");
 const app = express();
 
 // middle
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 
 const swaggerDefinition = {
@@ -17,19 +17,20 @@ const swaggerDefinition = {
     description: "Monoame API serverless swagger jsdoc template documentation",
     version: "1.0.0",
   },
-}
+};
 const options = {
   swaggerDefinition,
-  apis: ["./src/api/routes/*.js"]
-}
+  apis: ["./src/api/routes/*.js"],
+};
 const swaggerDoc = swaggerJSDoc(options);
 
-app.use("/swagger",
+app.use(
+  "/swagger",
   swaggerUI.serve,
   swaggerUI.setup(swaggerDoc, {
     swaggerOptions: {
-      url: 'api-docs'
-    }
+      url: "api-docs",
+    },
   })
 );
 

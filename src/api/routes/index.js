@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
 /**
  * @swagger
@@ -15,7 +15,7 @@ const router = require('express').Router();
  *         description: Connection has been established successfully.
  */
 router.get("/api/v1/test", async (req, res) => {
-  res.status(200).json({message: "ok"});
+  res.status(200).json({ message: "ok" });
 });
 
 module.exports = router;
